@@ -8,4 +8,4 @@ class FileUpload(forms.Form):
     csv_file = forms.FileField(required=False)
 
 class Text_input(forms.Form):
-    uname = forms.FileField(required=False)
+    username = forms.CharField(label='username')

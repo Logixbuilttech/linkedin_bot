@@ -10,8 +10,8 @@
 {% else %}
     <form action="/uname_send/" method="post">
         {% csrf_token %}
-        <label for="uname">Username</label>
-        <input type="text" id="uname" name="uname"><br><br>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username"><br>
         <input type="submit" value="Submit">
     </form>
 {% endif %}

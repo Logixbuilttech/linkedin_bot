@@ -1,10 +1,12 @@
-asgiref==3.3.4
+asgiref==3.2.10
 certifi==2020.12.5
 chardet==4.0.0
-Django==2.2
+Django==3.1
 django-csvimport==2.16
 idna==2.10
 linkedin-api==1.1.0
+python-magic==0.4.22
+python-magic-bin==0.4.14
 pytz==2021.1
 requests==2.25.1
 sqlparse==0.4.1

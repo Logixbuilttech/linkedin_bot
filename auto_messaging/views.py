@@ -17,16 +17,33 @@ def uname_input_choice(request):
 def csv_file(request):
     form = FileUpload(request.POST)
     if form.is_valid():
-        csv_file = request.FILES['csv_file']
-        return HttpResponse("Done")
+        file_name=str(request.FILES['csv_file'])
+        print(file_name)
+        if check_file_type(file_name):
+            handle_uploaded_file(request.FILES['csv_file'])
+            return HttpResponse("Done")
+        else:
+            return HttpResponse("Only CSV Files Supported in the format of 'file_name.csv'")
     else:
         return HttpResponse("Error")
 
 def uname_send(request):
     form = Text_input(request.POST)
+    print(form)
     if form.is_valid():
-        uname = request.FILES['uname']
-        print(uname)
+        username = form.cleaned_data.get('username')
+        print(username)
         return HttpResponse("Done")
     else:
         return HttpResponse("Error")
+
+def handle_uploaded_file(f):
+    with open('temp/upload.csv', 'wb+') as destination:
+        for chunk in f.chunks():
+            destination.write(chunk)
+
+def check_file_type(file):
+    if str.split(file,".")[1] == 'csv':
+        return True
+    else:
+        return False
