@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+	<h1>For sending message<h1>
+</head>
+<body>
+<a class="btn btn-primary" href="/logout_linkedin">Logout</a>
+{% block main_content %}
+<form action="/send_message/" method="post">
+	{% csrf_token %}
+  <label for="profile_user_id">Profile user id</label>
+  <input type="text" id="profile_user_id" name="profile_user_id"><br><br>
+  <label for="message_body">Message body</label>
+  <input type="text" id="message_body" name="message_body"><br><br>
+  <input type="submit" value="Submit">
+</form>
+{% endblock %}
+</body>
+</html>

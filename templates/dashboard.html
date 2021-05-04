@@ -1,0 +1,7 @@
+<h1>{{ fname }} {{ lname }}</h1>
+{% if flag == "True" %}
+    <a class="btn btn-primary" href="/linkedin_login_form">Linkedin login</a> <br>
+{% else %}
+    <a class="btn btn-primary" href="/logout_linkedin">Logout</a> <br>
+{% endif %}
+<a class="btn btn-primary" href="/index">Send Message</a>
