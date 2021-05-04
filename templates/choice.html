@@ -1,8 +1,9 @@
+{% block main_content %}
 <form action="/render_choice/" method="post">
 {% csrf_token %}
-<input type="radio" id="file" name="choice" value="file">
-<label for="file">CSV Upload</label><br>
-<input type="radio" id="input" name="choice" value="input">
-<label for="input">Typing Usernames</label><br>
+<label for="csv_upload">Want to upload Csv file of users list</label>
+<input type="checkbox" name="csv_upload" id="csv_upload">
+<p>If you want to feed user's list by yourself click submit without checking above option</p>
 <input type="submit" value="Submit">
 </form>
+{% endblock %}

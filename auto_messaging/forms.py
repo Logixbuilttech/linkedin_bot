@@ -1,8 +1,11 @@
 from django import forms
 
-CHOICES = [
-    ('file','file'),
-    ('input','input')
-]
+
 class Choice(forms.Form):
-    input=forms.CharField(label='input', widget=forms.RadioSelect(choices=CHOICES))
+    csv_upload = forms.BooleanField(required=False)
+
+class FileUpload(forms.Form):
+    csv_file = forms.FileField(required=False)
+
+class Text_input(forms.Form):
+    uname = forms.FileField(required=False)

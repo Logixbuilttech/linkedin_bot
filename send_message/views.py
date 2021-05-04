@@ -90,5 +90,8 @@ def get_name(request):
 def get_api_obj():
 	# For sending the api object to other functions
 	global api_id
-	api = ctypes.cast(api_id, ctypes.py_object).value
-	return api
+	if api_id == None:
+		return None
+	else:
+		api = ctypes.cast(api_id, ctypes.py_object).value
+		return api

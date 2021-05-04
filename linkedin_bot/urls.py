@@ -28,5 +28,7 @@ urlpatterns = [
     path('logout_linkedin/', sending.logout_linkedin),
     path('render_choice/', auto_sending.form_input),
     path('input_choices/', auto_sending.uname_input_choice),
+    path('upload_csv/', auto_sending.csv_file),
+    path('uname_send/', auto_sending.uname_send),
 
 ]
