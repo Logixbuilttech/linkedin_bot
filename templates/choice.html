@@ -1,0 +1,8 @@
+<form action="/render_choice/" method="post">
+{% csrf_token %}
+<input type="radio" id="file" name="choice" value="file">
+<label for="file">CSV Upload</label><br>
+<input type="radio" id="input" name="choice" value="input">
+<label for="input">Typing Usernames</label><br>
+<input type="submit" value="Submit">
+</form>

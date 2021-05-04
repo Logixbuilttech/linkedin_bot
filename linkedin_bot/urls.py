@@ -15,14 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from send_message import views
+from send_message import views as sending
+from auto_messaging import views as auto_sending
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/', views.index),
-    path('send_message/', views.send_message),
-    path('linkedin_login_form/', views.linkedin_login_form),
-    path('linkedin_login/', views.linkedin_login),
-    path('', views.dashboard),
-    path('logout_linkedin/', views.logout_linkedin),
+    path('index/', sending.index),
+    path('send_message/', sending.send_message),
+    path('linkedin_login_form/', sending.linkedin_login_form),
+    path('linkedin_login/', sending.linkedin_login),
+    path('', sending.dashboard),
+    path('logout_linkedin/', sending.logout_linkedin),
+    path('render_choice/', auto_sending.form_input),
+    path('input_choices/', auto_sending.uname_input_choice),
+
 ]

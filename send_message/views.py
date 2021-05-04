@@ -60,14 +60,12 @@ def sending_message(profile_user_id,message_body,api_id):
 	# Fetching recipirnts complete profile
 	recipient_profile = api.get_profile(profile_user_id)
 	# Checking if the client is already connected to user or not.
-	print('works')
+	
 	try:
 	# If user already in connection fetching conversation urn and sending message
 		api.get_conversation_details(recipient_profile['profile_id']) 
 		conversation_details = api.get_conversation_details(recipient_profile['profile_id'])
-		print("Works1")
 		conversation_urn_id = conversation_details['backendUrn'].split(':')[-1]
-		print("Works2")
 		api.send_message(message_body=message_body,conversation_urn_id=conversation_urn_id)
 	except:
 	# Else sending invitation with the same message
