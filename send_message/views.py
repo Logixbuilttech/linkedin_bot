@@ -90,6 +90,7 @@ def get_name(request):
 	return (first_name,last_name)
 
 def get_api_obj():
+	# For sending the api object to other functions
 	global api_id
 	api = ctypes.cast(api_id, ctypes.py_object).value
 	return api
